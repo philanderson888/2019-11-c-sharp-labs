@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Lab_09_Rabbit_Test
 {
-    
+    #region ProgramAndMain()
     class Program
     {
         static void Main(string[] args)
@@ -12,6 +12,7 @@ namespace Lab_09_Rabbit_Test
  
         }
     }
+    #endregion
 
     public class Rabbit_Collection
     {
@@ -32,6 +33,7 @@ namespace Lab_09_Rabbit_Test
         public static (int cumulativeRabbitAge,int rabbitCount) MultiplyRabbits(int totalYears)
         {
             #region InitialiseRabbitListToHaveOneRabbitAge0
+            var rabbits = new List<Rabbit>();
             // first rabbit
             var rabbit0 = new Rabbit
             {
@@ -71,14 +73,14 @@ namespace Lab_09_Rabbit_Test
         /*
          Can we change the test or create a second one which only starts to add new rabbits
          if their age is >=3
-                  Test data
+                  Test data                      total age  count
          Year 0    1 rabbit age 0
          Year 1    1            1
               2    1            2
-              3    1            3
-              4    2            4,0
-              5    3            5,1,0
-              6    4            6,2,1,0
+              3    1            3                  3          1
+              4    2            4,0                4          2
+              5    3            5,1,0              6          3
+              6    4            6,2,1,0            9          4
               7    5            7,3,2,1,0
               8    7            8,4,3,2,1,0,0  
                       
@@ -87,7 +89,31 @@ namespace Lab_09_Rabbit_Test
         public static (int cumulativeRabbitAge, int rabbitCount) 
             MultiplyRabbitsAfterAgeThreeReached(int totalYears)
         {
-            return (-2, -2);
+            #region initialiseRabbitListToHaveOneRabbitInItAge0
+            rabbits = new List<Rabbit>();
+            var initialRabbit = new Rabbit();
+            rabbits.Add(initialRabbit);
+            #endregion
+
+            
+            for (int years = 0; years < totalYears; years++)
+            {
+                foreach(var rabbit in rabbits.ToArray())
+                {
+                    if (rabbit.Age >= 3)
+                    {
+                        var newRabbit = new Rabbit();
+                        rabbits.Add(newRabbit);
+                    }
+                    rabbit.Age++;
+                }
+            }
+            int cumulativeRabbitAge = 0;
+            foreach(var rabbit in rabbits)
+            {
+                cumulativeRabbitAge += rabbit.Age;
+            }
+            return (cumulativeRabbitAge, rabbits.Count);
         }
         #endregion
 

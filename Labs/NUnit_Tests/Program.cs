@@ -8,25 +8,16 @@ namespace NUnit_Tests
     [TestFixture]
     class NUnit_Tests
     {
+        #region Setup
         // annotations
         [SetUp]
         public void Setup()
         {
             // eg get data from database for all tests
         }
+        #endregion
 
-        [Test]
-        public void RunThisTest()
-        {
-            // Arrange (data)
-
-            // Act (run test)
-
-            // Assert (true/false ie pass/fail)
-            Assert.AreEqual(true, true);
-        }
-
-        [TestCase(10,11,22,21,19,83)]
+        #region ArrayListDictionaryGetTotal
         [TestCase(1,2,3,4,5,280)]
         [TestCase(1,4,9,16,25,1604)]
         [TestCase(10,11,12,13,14,1405)]
@@ -38,6 +29,7 @@ namespace NUnit_Tests
             // see if answer is correct or not 
             Assert.AreEqual(expected, actual);
         }
+        #endregion
 
         #region TestRabbitGrowth
         [TestCase(3,7,8)]
@@ -56,10 +48,10 @@ namespace NUnit_Tests
         #endregion
 
         #region TestRabbitGrowthWhereItDoesNotBeginUntilThreeYearsAgeReached
-        [TestCase(3, -1,-1)]
-        [TestCase(4, -1,-1)]
-        [TestCase(5, -1,-1)]
-        [TestCase(6, -1,-1)]
+        [TestCase(3, 3,1)]
+        [TestCase(4, 4,2)]
+        [TestCase(5, 6, 3)]
+        [TestCase(6, 9, 4)]
         public void RabbitGrowthAfterThreeYears
             (int totalYears, int expectedRabbitAge, 
                                    int expectedRabbitCount)
