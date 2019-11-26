@@ -1,0 +1,58 @@
+﻿-- Day 27 - WPF CRUD APP
+USE MASTER
+GO
+
+DROP DATABASE IF EXISTS TasksDB 
+GO
+
+CREATE DATABASE TasksDB
+GO
+
+USE TasksDb
+GO
+
+DROP TABLE IF EXISTS Tasks 
+DROP TABLE IF EXISTS Categories
+DROP TABLE IF EXISTS Users 
+
+-- Categories with CategoryID and CategoryName
+CREATE TABLE Categories(
+	CategoryId INT IDENTITY PRIMARY KEY NOT NULL,
+	CategoryName VARCHAR(50) NULL
+)
+-- Users with UserID and UserName
+CREATE TABLE Users(
+	UserId INT IDENTITY PRIMARY KEY NOT NULL,
+	UserName VARCHAR(50) NULL
+)
+
+INSERT INTO USERS VALUES ('bob')
+INSERT INTO USERS VALUES ('bill')
+INSERT INTO USERS VALUES ('ben')
+INSERT INTO USERS VALUES ('alice')
+INSERT INTO CATEGORIES VALUES ('admin')
+INSERT INTO CATEGORIES VALUES ('programming')
+INSERT INTO CATEGORIES VALUES ('personal')
+
+-- TaskId, Description, CategoryId, UserId, Done(boolean), DateDone(date)
+CREATE TABLE Tasks(
+	TaskID INT IDENTITY NOT NULL PRIMARY KEY,
+	Description VARCHAR(50) NULL,
+	Done BIT NULL,
+	DateCompleted DATE NULL,
+	CategoryID INT NULL,
+	UserID INT NULL,
+	-- foreign keys
+	FOREIGN KEY (CategoryId) REFERENCES Categories (CategoryId),
+	FOREIGN KEY (UserId) REFERENCES Users (UserId)
+)
+GO
+
+INSERT INTO Tasks VALUES ('test',1,NULL,1,1)
+INSERT INTO Tasks VALUES ('test2',0,'2019-11-17',2,2)
+INSERT INTO Tasks VALUES ('test3',1,'2019-11-18',3,3)
+
+SELECT * FROM Categories
+SELECT * FROM Users
+SELECT * FROM Tasks 
+

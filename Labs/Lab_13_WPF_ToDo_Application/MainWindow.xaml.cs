@@ -1,0 +1,167 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Lab_13_WPF_ToDo_Application
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        List<string> items = new List<string>();
+        List<Task> tasks = new List<Task>();
+        Task task;
+        List<Category> categories = new List<Category>();
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            Initialise();
+        }
+
+        #region //OriginalOldCodeWhereWeListDataAsStringsNotOOP
+        //void InitialiseListBoxOfStrings()
+        //{
+        //    ListBoxTasks.ItemsSource = items;
+        //    using (var db = new TasksDBEntities())
+        //    {
+        //        tasks = db.Tasks.ToList();
+        //    }
+        //    // get description and add to list
+        //    foreach(var item in tasks)
+        //    {
+        //        items.Add($"{item.TaskID,-10}{item.Description,-40}{item.Done,-10}{item.DateCompleted}");
+        //    }
+        //}
+        #endregion
+
+        void Initialise()
+        {
+            using (var db = new TasksDBEntities())
+            {
+                tasks = db.Tasks.ToList();
+                categories = db.Categories.ToList();
+            }
+            ListBoxTasks.ItemsSource = tasks;
+            ListBoxTasks.DisplayMemberPath = "Description";
+            ComboBoxCategory.ItemsSource = categories;
+            ComboBoxCategory.DisplayMemberPath = "CategoryName";
+        }
+        private void ListBoxTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+       
+            // print out details of selected item
+            // instance = (convert to Task) the item selected in listbox by user
+            task = (Task)ListBoxTasks.SelectedItem;
+            if (task != null)
+            {
+                TextBoxId.Text = task.TaskID.ToString(); ;
+                TextBoxDescription.Text = task.Description;
+                TextBoxCategoryId.Text = task.CategoryID.ToString();
+                ButtonEdit.IsEnabled = true;
+                if (task.CategoryID != null)
+                {
+                    ComboBoxCategory.SelectedIndex = (int)task.CategoryID-1;
+                }
+                else
+                {
+                    ComboBoxCategory.SelectedItem = null;
+                }
+
+            }
+        }
+
+        private void ButtonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (ButtonEdit.Content.ToString() == "Edit")
+            {
+                TextBoxDescription.IsReadOnly = false;
+                TextBoxCategoryId.IsReadOnly = false;
+                ButtonEdit.Content = "Save";
+                TextBoxDescription.Background = Brushes.White;
+                TextBoxCategoryId.Background = Brushes.White;
+            }
+            else
+            {
+                using (var db = new TasksDBEntities())
+                {
+                    var taskToEdit = db.Tasks.Find(task.TaskID);
+                    // update description & categoryid
+                    taskToEdit.Description = TextBoxDescription.Text;
+                    // converting category id to integer from text box (string)
+                    // tryparse is a safe way to do conversion : null if fails
+                    int.TryParse(TextBoxCategoryId.Text, out int categoryid);
+                    taskToEdit.CategoryID = categoryid;
+                    // update record in database
+                    db.SaveChanges();
+                    // update list box !!
+                    ListBoxTasks.ItemsSource = null; // reset list box
+                    tasks = db.Tasks.ToList();  // get fresh list
+                    ListBoxTasks.ItemsSource = tasks;  // re-link the list box to new list
+                }
+                ButtonEdit.Content = "Edit";
+                ButtonEdit.IsEnabled = false;
+                TextBoxDescription.IsReadOnly = true;
+                TextBoxCategoryId.IsReadOnly = true;
+                var brush = new BrushConverter();
+                TextBoxDescription.Background = (Brush)brush.ConvertFrom("#EEFAFF");
+                TextBoxCategoryId.Background = (Brush)brush.ConvertFrom("#EEFAFF");
+            }
+
+        }
+
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (ButtonAdd.Content.ToString() == "Add")
+            {
+                ButtonAdd.Content = "Confirm";
+                // set boxes to editable
+                TextBoxDescription.Background = Brushes.White;
+                TextBoxCategoryId.Background = Brushes.White;
+                TextBoxDescription.IsReadOnly = false;
+                TextBoxCategoryId.IsReadOnly = false;
+                // clear out boxes
+                TextBoxId.Text = "";
+                TextBoxDescription.Text = "";
+                TextBoxCategoryId.Text = "";
+            }
+            else
+            {
+                ButtonAdd.Content = "Add";
+                // set boxes back to read only
+                TextBoxDescription.IsReadOnly = true;
+                TextBoxCategoryId.IsReadOnly = true;
+                var brush = new BrushConverter();
+                TextBoxDescription.Background = (Brush)brush.ConvertFrom("#EEFAFF");
+                TextBoxCategoryId.Background = (Brush)brush.ConvertFrom("#EEFAFF");
+                // add record to database
+                int.TryParse(TextBoxCategoryId.Text, out int categoryID);
+
+                var taskToAdd = new Task()
+                {
+                    Description = TextBoxDescription.Text,
+                    CategoryID = categoryID
+
+                };
+                using (var db = new TasksDBEntities())
+                {
+                    db.Tasks.Add(taskToAdd);
+                    db.SaveChanges();
+                }
+
+            }
+        }
+    }
+}
