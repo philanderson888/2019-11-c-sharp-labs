@@ -24,6 +24,7 @@ namespace Lab_13_WPF_ToDo_Application
         List<Task> tasks = new List<Task>();
         Task task;
         List<Category> categories = new List<Category>();
+        List<TaskWithCategory> taskswithcategories = new List<TaskWithCategory>();
 
         public MainWindow()
         {
@@ -69,16 +70,23 @@ namespace Lab_13_WPF_ToDo_Application
                     join category in db.Categories on
                         task.CategoryID equals category.CategoryId
                     // HAVE TO CREATE A NEW OUTPUT OBJECT (CUSTOM)
-                    select new
+                    //select new
+                    //{
+                    //    taskID = task.TaskID,
+                    //    description = task.Description,
+                    //    category = category.CategoryName.
+                    //};
+                    // make new instance of our custom class
+                    select new TaskWithCategory()
                     {
-                        taskID = task.TaskID,
-                        description = task.Description,
-                        category = category.CategoryName
+                        TaskId=task.TaskID
                     };
+                // add to list
+                taskswithcategories = taskList.ToList();
                 // PRINT LIST
                 foreach (var task in taskList.ToList())
                 {
-                    System.Diagnostics.Trace.WriteLine($"{task.taskID,-10}{task.description,-20}{task.category}");
+                    //System.Diagnostics.Trace.WriteLine($"{task.taskID,-10}{task.description,-20}{task.category}");
                 }
             }
         }
@@ -266,5 +274,11 @@ namespace Lab_13_WPF_ToDo_Application
                 TextBoxCategoryId.Text = "";
             }
         }
+    }
+
+    public class TaskWithCategory
+    {
+        //1 2 3 
+        public int TaskId { get; set; }
     }
 }
