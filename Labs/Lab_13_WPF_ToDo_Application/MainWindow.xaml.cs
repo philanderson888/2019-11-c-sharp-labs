@@ -71,6 +71,7 @@ namespace Lab_13_WPF_ToDo_Application
                 TextBoxDescription.Text = task.Description;
                 TextBoxCategoryId.Text = task.CategoryID.ToString();
                 ButtonEdit.IsEnabled = true;
+                ButtonDelete.IsEnabled = true;
                 if (task.CategoryID != null)
                 {
                     ComboBoxCategory.SelectedIndex = (int)task.CategoryID-1;
@@ -79,7 +80,33 @@ namespace Lab_13_WPF_ToDo_Application
                 {
                     ComboBoxCategory.SelectedItem = null;
                 }
+            }
+        }
 
+        private void ListBoxTasks_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // get object
+            task = (Task)ListBoxTasks.SelectedItem;
+            if (task != null)
+            {
+                // set the boxes for edit conditions
+                TextBoxId.Text = task.TaskID.ToString(); ;
+                TextBoxDescription.Text = task.Description;
+                TextBoxCategoryId.Text = task.CategoryID.ToString();
+                ButtonEdit.IsEnabled = true;
+                if (task.CategoryID != null)
+                {
+                    ComboBoxCategory.SelectedIndex = (int)task.CategoryID - 1;
+                }
+                else
+                {
+                    ComboBoxCategory.SelectedItem = null;
+                }
+                TextBoxDescription.IsReadOnly = false;
+                TextBoxCategoryId.IsReadOnly = false;
+                ButtonEdit.Content = "Save";
+                TextBoxDescription.Background = Brushes.White;
+                TextBoxCategoryId.Background = Brushes.White;
             }
         }
 
@@ -93,7 +120,7 @@ namespace Lab_13_WPF_ToDo_Application
                 TextBoxDescription.Background = Brushes.White;
                 TextBoxCategoryId.Background = Brushes.White;
             }
-            else
+            else  // ie we are in 'Save' mode
             {
                 using (var db = new TasksDBEntities())
                 {
@@ -104,6 +131,14 @@ namespace Lab_13_WPF_ToDo_Application
                     // tryparse is a safe way to do conversion : null if fails
                     int.TryParse(TextBoxCategoryId.Text, out int categoryid);
                     taskToEdit.CategoryID = categoryid;
+                    if (task.CategoryID != null)
+                    {
+                        ComboBoxCategory.SelectedIndex = (int)taskToEdit.CategoryID - 1;
+                    }
+                    else
+                    {
+                        ComboBoxCategory.SelectedItem = null;
+                    }
                     // update record in database
                     db.SaveChanges();
                     // update list box !!
@@ -159,8 +194,49 @@ namespace Lab_13_WPF_ToDo_Application
                 {
                     db.Tasks.Add(taskToAdd);
                     db.SaveChanges();
+                    ListBoxTasks.ItemsSource = null;
+                    tasks = db.Tasks.ToList();
+                    ListBoxTasks.ItemsSource = tasks;
                 }
 
+            }
+        }
+
+        private void ButtonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (ButtonDelete.Content.ToString() == "Delete")
+            {
+                ButtonDelete.Content = "Are You Sure?";
+                TextBoxId.Background = Brushes.OrangeRed;
+                TextBoxDescription.Background = Brushes.OrangeRed;
+                TextBoxCategoryId.Background = Brushes.OrangeRed;
+            }
+            else
+            {
+                if (task != null)
+                {
+                    using (var db = new TasksDBEntities())
+                    {
+                        var taskToRemove = db.Tasks.Find(task.TaskID);
+                        db.Tasks.Remove(taskToRemove);
+                        db.SaveChanges();
+                        // update list
+                        ListBoxTasks.ItemsSource = null;
+                        tasks = db.Tasks.ToList();
+                        ListBoxTasks.ItemsSource = tasks;
+                    }
+                }
+                ButtonDelete.Content = "Delete";
+                TextBoxDescription.IsReadOnly = true;
+                TextBoxCategoryId.IsReadOnly = true;
+                var brush = new BrushConverter();
+                TextBoxId.Background = (Brush)brush.ConvertFrom("#EEFAFF");
+                TextBoxDescription.Background = (Brush)brush.ConvertFrom("#EEFAFF");
+                TextBoxCategoryId.Background = (Brush)brush.ConvertFrom("#EEFAFF");
+                // clear out boxes
+                TextBoxId.Text = "";
+                TextBoxDescription.Text = "";
+                TextBoxCategoryId.Text = "";
             }
         }
     }

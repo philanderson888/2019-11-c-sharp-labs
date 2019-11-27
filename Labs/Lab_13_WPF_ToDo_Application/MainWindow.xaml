@@ -21,6 +21,8 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="3*" />
             <RowDefinition Height="*" />
@@ -29,8 +31,9 @@
                FontSize="25" FontWeight="Bold" Background="#D1E8DC" 
                HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" 
                VerticalContentAlignment="Center"/>
-        <TabPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Background="#b6ffF9">
+        <TabPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Background="#b6ffF9">
             <ListBox x:Name="ListBoxTasks" SelectionChanged="ListBoxTasks_SelectionChanged" 
+                     MouseDoubleClick="ListBoxTasks_DoubleClick"
                     />
         </TabPanel>
         <TextBox x:Name="TextBoxId" Grid.Row="2" Grid.Column="4" IsReadOnly="true" Background="#EEFAFF"/>
@@ -39,10 +42,35 @@
         <Label x:Name="LabelId" Content="ID" Grid.Row="1" Grid.Column="4" />
         <Label x:Name="LabelDescription" Content="Description" Grid.Row="1" Grid.Column="5" />
         <Label x:Name="LabelCategory" Content="Category" Grid.Row="1" Grid.Column="6" />
-        <Button x:Name="ButtonEdit" Content="Edit" IsEnabled="False" 
-                Grid.Row="1" Grid.Column="2" Background="#DADBFD" Click="ButtonEdit_Click"/>
+        <Label x:Name="LabelDone" Content="Task Done?" Grid.Row="3" Grid.Column="4" />
+        <Label x:Name="LabelDate" Content="Date Done" Grid.Row="3" Grid.Column="5" />
+        <Label x:Name="LabelCategoryName" Content="Category" Grid.Row="3" Grid.Column="6" />
         <Button x:Name="ButtonAdd" Content="Add" IsEnabled="True" 
                 Grid.Row="1" Grid.Column="1" Background="#DADBFD" Click="ButtonAdd_Click"/>
-        <ComboBox x:Name="ComboBoxCategory" Grid.Row="3" Grid.Column="6" />
+        <Button x:Name="ButtonEdit" Content="Edit" IsEnabled="False" 
+                Grid.Row="1" Grid.Column="2" Background="#DADBFD" Click="ButtonEdit_Click"/>
+        <Button x:Name="ButtonDelete" Content="Delete" IsEnabled="False" 
+                Grid.Row="1" Grid.Column="3" Background="#DADBFD" Click="ButtonDelete_Click"/>
+        <CheckBox x:Name="CheckBoxDone" Grid.Row="4" Grid.Column="4" Background="#b6ffF9" HorizontalAlignment="Center"
+                  VerticalAlignment="Center" />
+        <DatePicker x:Name="DatePickerDateDone" Grid.Row="4" Grid.Column="5" HorizontalContentAlignment="Stretch" />
+        <ComboBox x:Name="ComboBoxCategory" Grid.Row="4" Grid.Column="6" />
+        <TabControl Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Background="#b6ffF9" >
+            <TabItem Header="Test1" Background="#ccc">
+                <TabPanel>
+                    <Label Content="Test1" Background="#ddd"/>
+                </TabPanel>
+            </TabItem>
+            <TabItem Header="Test2" Background="#ccc">
+                <TabPanel>
+                    <Label Content="Test2" Background="#bbb" />
+                </TabPanel>
+            </TabItem>
+            <TabItem Header="Test3" Background="#ccc">
+                <TabPanel>
+                    <Label Content="Test3" Background="#edc"/>
+                </TabPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
