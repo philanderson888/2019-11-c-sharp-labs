@@ -18,7 +18,7 @@ namespace Lab_07_Northwind_SQLITE
         {
             using (var db = new NorthwindDbContext())
             {
-                customers = db.Customers.ToList();
+                customers = db.Customers.Where(c=>c.City=="London").ToList();
             }
             customers.ForEach(c => Console.WriteLine(c.CustomerID));
         }

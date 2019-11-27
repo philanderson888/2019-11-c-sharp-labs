@@ -46,7 +46,7 @@ namespace Lab_13_WPF_ToDo_Application
         //    }
         //}
         #endregion
-
+        #region InitialiseApplication
         void Initialise()
         {
             using (var db = new TasksDBEntities())
@@ -58,7 +58,32 @@ namespace Lab_13_WPF_ToDo_Application
             ListBoxTasks.DisplayMemberPath = "Description";
             ComboBoxCategory.ItemsSource = categories;
             ComboBoxCategory.DisplayMemberPath = "CategoryName";
+
+
+            // Inner Join 
+            using (var db = new TasksDBEntities())
+            {
+                // task but it has a CATEGORYID.  INNER JOIN => CATEGORYNAME
+                var taskList =
+                    from task in db.Tasks
+                    join category in db.Categories on
+                        task.CategoryID equals category.CategoryId
+                    // HAVE TO CREATE A NEW OUTPUT OBJECT (CUSTOM)
+                    select new
+                    {
+                        taskID = task.TaskID,
+                        description = task.Description,
+                        category = category.CategoryName
+                    };
+                // PRINT LIST
+                foreach (var task in taskList.ToList())
+                {
+                    System.Diagnostics.Trace.WriteLine($"{task.taskID,-10}{task.description,-20}{task.category}");
+                }
+            }
         }
+        #endregion InitialiseApplication
+        #region SelectATaskInTheListBox
         private void ListBoxTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
        
@@ -82,7 +107,8 @@ namespace Lab_13_WPF_ToDo_Application
                 }
             }
         }
-
+        #endregion SelectATask
+        #region OpenATaskForEditingByDoubleClickingTaskInListBox
         private void ListBoxTasks_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             // get object
@@ -109,6 +135,7 @@ namespace Lab_13_WPF_ToDo_Application
                 TextBoxCategoryId.Background = Brushes.White;
             }
         }
+        #endregion OpenATaskForEditingByDoubleClickingTaskInListBox
 
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {

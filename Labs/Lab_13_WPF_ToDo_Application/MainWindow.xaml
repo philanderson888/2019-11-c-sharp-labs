@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="Auto" Width="Auto" FontSize="18" Background="#EEFAFF">
     <Grid>
+        <!--#region SetGridRowAndColumnWidths-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -27,34 +28,26 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <!--#endregion SetGridRowAndColumnWidths -->       
+        <!--#region  CreateLabels -->
         <Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4" Content="To Do Application" 
                FontSize="25" FontWeight="Bold" Background="#D1E8DC" 
                HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" 
                VerticalContentAlignment="Center"/>
-        <TabPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Background="#b6ffF9">
-            <ListBox x:Name="ListBoxTasks" SelectionChanged="ListBoxTasks_SelectionChanged" 
-                     MouseDoubleClick="ListBoxTasks_DoubleClick"
-                    />
-        </TabPanel>
-        <TextBox x:Name="TextBoxId" Grid.Row="2" Grid.Column="4" IsReadOnly="true" Background="#EEFAFF"/>
-        <TextBox x:Name="TextBoxDescription" Grid.Row="2" Grid.Column="5" IsReadOnly="true" Background="#EEFAFF"/>
-        <TextBox x:Name="TextBoxCategoryId" Grid.Row="2" Grid.Column="6" IsReadOnly="true" Background="#EEFAFF" />
         <Label x:Name="LabelId" Content="ID" Grid.Row="1" Grid.Column="4" />
         <Label x:Name="LabelDescription" Content="Description" Grid.Row="1" Grid.Column="5" />
         <Label x:Name="LabelCategory" Content="Category" Grid.Row="1" Grid.Column="6" />
         <Label x:Name="LabelDone" Content="Task Done?" Grid.Row="3" Grid.Column="4" />
         <Label x:Name="LabelDate" Content="Date Done" Grid.Row="3" Grid.Column="5" />
         <Label x:Name="LabelCategoryName" Content="Category" Grid.Row="3" Grid.Column="6" />
-        <Button x:Name="ButtonAdd" Content="Add" IsEnabled="True" 
-                Grid.Row="1" Grid.Column="1" Background="#DADBFD" Click="ButtonAdd_Click"/>
-        <Button x:Name="ButtonEdit" Content="Edit" IsEnabled="False" 
-                Grid.Row="1" Grid.Column="2" Background="#DADBFD" Click="ButtonEdit_Click"/>
-        <Button x:Name="ButtonDelete" Content="Delete" IsEnabled="False" 
-                Grid.Row="1" Grid.Column="3" Background="#DADBFD" Click="ButtonDelete_Click"/>
-        <CheckBox x:Name="CheckBoxDone" Grid.Row="4" Grid.Column="4" Background="#b6ffF9" HorizontalAlignment="Center"
-                  VerticalAlignment="Center" />
-        <DatePicker x:Name="DatePickerDateDone" Grid.Row="4" Grid.Column="5" HorizontalContentAlignment="Stretch" />
-        <ComboBox x:Name="ComboBoxCategory" Grid.Row="4" Grid.Column="6" />
+        <!--#endregion CreateLabels -->    
+        <!--#region CreatePanels -->
+        <TabPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Background="#b6ffF9">
+            <ListBox x:Name="ListBoxTasks" SelectionChanged="ListBoxTasks_SelectionChanged" 
+                     MouseDoubleClick="ListBoxTasks_DoubleClick" />
+        </TabPanel>
+        <!--#region HiddenTabControl-->
+        <!-- hide tab control 
         <TabControl Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Background="#b6ffF9" >
             <TabItem Header="Test1" Background="#ccc">
                 <TabPanel>
@@ -72,5 +65,27 @@
                 </TabPanel>
             </TabItem>
         </TabControl>
+        -->
+        <!--#endregion-->
+        <!--#endregion CreatePanels -->  
+        <!-- #region TextBoxes -->
+        <TextBox x:Name="TextBoxId" Grid.Row="2" Grid.Column="4" IsReadOnly="true" Background="#EEFAFF"/>
+        <TextBox x:Name="TextBoxDescription" Grid.Row="2" Grid.Column="5" IsReadOnly="true" Background="#EEFAFF"/>
+        <TextBox x:Name="TextBoxCategoryId" Grid.Row="2" Grid.Column="6" IsReadOnly="true" Background="#EEFAFF" />
+        <!-- #endregion TextBoxes -->
+        <!--#region  Buttons -->
+        <Button x:Name="ButtonAdd" Content="Add" IsEnabled="True" 
+                Grid.Row="1" Grid.Column="1" Background="#DADBFD" Click="ButtonAdd_Click"/>
+        <Button x:Name="ButtonEdit" Content="Edit" IsEnabled="False" 
+                Grid.Row="1" Grid.Column="2" Background="#DADBFD" Click="ButtonEdit_Click"/>
+        <Button x:Name="ButtonDelete" Content="Delete" IsEnabled="False" 
+                Grid.Row="1" Grid.Column="3" Background="#DADBFD" Click="ButtonDelete_Click"/>
+        <!-- #endregion Buttons -->
+        <!--#region InputItems -->
+        <CheckBox x:Name="CheckBoxDone" Grid.Row="4" Grid.Column="4" Background="#b6ffF9" HorizontalAlignment="Center"
+                  VerticalAlignment="Center" />
+        <DatePicker x:Name="DatePickerDateDone" Grid.Row="4" Grid.Column="5" HorizontalContentAlignment="Stretch" />
+        <ComboBox x:Name="ComboBoxCategory" Grid.Row="4" Grid.Column="6" />
+        <!--#endregion InputItems -->
     </Grid>
 </Window>
