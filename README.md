@@ -1,6 +1,5 @@
 # 2019-11-c-sharp-labs
 
-
 # Engineering 45 Notes
 
 [Day 6 - GitHub](Engineering%2045%20Notes/Day%206%20GitHub.md)
@@ -34,5 +33,17 @@
 [Day 27 - WPF CRUD Application with Tasks, Categories And Users](Engineering%2045%20Notes/Day%2027%20WPF%20CRUD%20Application%20with%20Tasks%20Categories%20.md)
 
 [Day 28 - WPF CRUD App Part 2](Engineering%2045%20Notes/Day%2028%20WPF%20CRUD%20App%20Part%202.md)
+
+[Day 28 - Custom WPF App Challenge](Engineering%2045%20Notes/Day%2028%20Custom%20WPF%20App%20Challenge.md)
+
+[Day 28 - Custom Code To Read Weather API Data Asynchronously](Engineering%2045%20Notes/Day%2028%20Custom%20Code%20To%20Read%20Weather%20API%20Data%20Asynch.md)
+
+[Day 29 - Morning Tech Review](Engineering%2045%20Notes/Day%2029%20Morning%20Tech%20Review.md)
+
+[Day 29 - LINQ](Engineering%2045%20Notes/Day%2029%20LINQ.md)
+
+[Day 29 - Tasks Continued](Engineering%2045%20Notes/Day%2029%20Tasks%20Continued.md)
+
+### Week 8
 
 [Day - 45 - Modern Javascript Application](Engineering%2045%20Notes/Day%2045%20Modern%20Javascript%20Application.md)
