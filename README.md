@@ -1,5 +1,7 @@
 # DailyLessons
 
+### Week 2
+
 [Day 6 - GitHub](DailyLessons/Day%206%20GitHub.md)
 
 ### Week 5
@@ -47,6 +49,16 @@
 [Day 30 - Encoding](DailyLessons/Day%2030%20Encoding.md)
 
 [Day 30 - Streaming And Serialisation Intro](DailyLessons/Day%2030%20Streaming%20And%20Serialisation%20Intro.md)
+
+### Week 7
+
+[Day 31 - Morning Technical Review](DailyLessons/Day%2031%20Morning%20Technical%20Review.md)
+
+[Day 31 - Streaming And Serialisation](DailyLessons/Day%2031%20Streaming%20And%20Serialisation.md)
+
+[Day 31 - Http](DailyLessons/Day%2031%20Http.md)
+
+[Day 31 - Northwind Tests](DailyLessons/Day%2031%20Northwind%20Tests.md)
 
 ### Week 8
 
