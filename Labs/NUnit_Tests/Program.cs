@@ -2,6 +2,8 @@
 using NUnit.Framework;
 using Lab_08_TDD_Collections;
 using Lab_09_Rabbit_Test;
+using Lab_17_Northwind_Tests_Code_First;
+using Lab_14_LINQ;
 
 namespace NUnit_Tests
 {
@@ -66,6 +68,24 @@ namespace NUnit_Tests
             // Assert
             Assert.AreEqual(expectedRabbitAge, actualCumulativeAge);
             Assert.AreEqual(expectedRabbitCount, actualRabbitCount);
+        }
+        #endregion
+
+        #region TestNumberOfNorthwindCustomers
+        /* Create a class to read in Northwind customers and return the total
+         * Then repeat for just London customers
+         * */
+        [TestCase(null,91)]    // how many customers total?
+        [TestCase("London",6)] // how many customers in London?
+        [TestCase("Berlin",1)]  // how many in berlin
+        public void TestNumberOfNorthwindCustomers(string city,int expected)
+        {
+            // arrange
+            var testInstance = new Lab_14_LINQ.NorthwindCustomers();
+            // act
+            var actual = testInstance.NumberOfNorthwindCustomers(city);
+            // assert
+            Assert.AreEqual(expected, actual);
         }
         #endregion
     }

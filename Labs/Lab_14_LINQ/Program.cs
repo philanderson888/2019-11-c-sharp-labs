@@ -257,5 +257,25 @@ namespace Lab_14_LINQ
         }
     }
     #endregion
+
+
+
+    public class NorthwindCustomers
+    {
+        public int NumberOfNorthwindCustomers(string city)
+        {
+            using (var db = new Northwind())
+            {
+                if (city == null || city == "")
+                {
+                    return db.Customers.Count();
+                }
+                else
+                {
+                    return db.Customers.Where(c => c.City == city).Count();
+                }
+            }
+        }
+    }
 }
 
