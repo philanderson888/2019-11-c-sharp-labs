@@ -4,6 +4,7 @@ using Lab_08_TDD_Collections;
 using Lab_09_Rabbit_Test;
 using Lab_17_Northwind_Tests_Code_First;
 using Lab_14_LINQ;
+using Lab_20_Northwind_Products;
 
 namespace NUnit_Tests
 {
@@ -85,6 +86,42 @@ namespace NUnit_Tests
             // act
             var actual = testInstance.NumberOfNorthwindCustomers(city);
             // assert
+            Assert.AreEqual(expected, actual);
+        }
+        #endregion
+
+        #region TestNumberOfProductsStartingWithAndContainingAParticularLetter
+        [TestCase(3)]
+        public void TestNumberOfProductsStartingWithP(int expected)
+        {
+            // arrange (instance)
+            var instance = new NorthwindProductTest();
+            // act (method)
+            var actual = instance.TestNumberOfProductsStartingWithP();
+            // assert 
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCase("p",3)]
+        public void TestNumberOfProductsStartingWithALetter(string letter, int expected)
+        {
+            // arrange (instance)
+            var instance = new NorthwindProductTest();
+            // act (method)
+            var actual = instance.TestNumberOfProductsStartingWithALetter(letter);
+            // assert 
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase("p", 17)]
+        [TestCase("a", 58)]
+        [TestCase("d", 30)]
+        public void TestNumberOfProductsContainingALetter(string letter, int expected)
+        {
+            // arrange (instance)
+            var instance = new NorthwindProductTest();
+            // act (method)
+            var actual = instance.TestNumberOfProductsContainingALetter(letter);
+            // assert 
             Assert.AreEqual(expected, actual);
         }
         #endregion

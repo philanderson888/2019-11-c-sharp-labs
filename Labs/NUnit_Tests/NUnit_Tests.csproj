@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Lab_09_Rabbit_Test\Lab_09_Rabbit_Test.csproj" />
     <ProjectReference Include="..\Lab_14_LINQ\Lab_14_LINQ.csproj" />
     <ProjectReference Include="..\Lab_17_Northwind_Tests_Code_First\Lab_17_Northwind_Tests_Code_First.csproj" />
+    <ProjectReference Include="..\Lab_20_Northwind_Products\Lab_20_Northwind_Products.csproj" />
   </ItemGroup>
 
 </Project>
