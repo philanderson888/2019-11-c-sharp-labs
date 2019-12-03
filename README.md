@@ -60,6 +60,12 @@
 
 [Day 31 - Northwind Tests](DailyLessons/Day%2031%20Northwind%20Tests.md)
 
+[Day 32 - Northwind Tests](DailyLessons/Day%2032%20Northwind%20Tests.md)
+
+[Day 32 - Async And Await](DailyLessons/Day%2032%20Async%20And%20Await.md)
+
+[Day 33 - Serialize To XML, JSON and Binary](DailyLessons/Day%2033%20Serialize%20To%20XML%20JSON%20and%20Binary.md)
+
 ### Week 8
 
 [Day - 45 - Modern Javascript Application](DailyLessons/Day%2045%20Modern%20Javascript%20Application.md)
