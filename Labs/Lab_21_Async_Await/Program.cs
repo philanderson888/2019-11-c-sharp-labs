@@ -24,9 +24,9 @@ namespace Lab_21_Async_Await
 
 
             // SyncMethod  : WAIT FOR IT
-            // ReadDataSync();
+            ReadDataSync();
             // AsyncMethod : DON'T WAIT FOR IT
-            //  ReadDataAsync();
+            ReadDataAsync();
             // GetWebPageSync
 
             s.Start();
@@ -53,7 +53,6 @@ namespace Lab_21_Async_Await
         async static void ReadDataAsync()
         {
             var output = await File.ReadAllTextAsync("data.csv");
-            Thread.Sleep(5000);
             Console.WriteLine("\nASync\n");
             Console.WriteLine(output);
         }

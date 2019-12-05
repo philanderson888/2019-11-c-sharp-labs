@@ -52,17 +52,40 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_18_Streaming", "Lab_18_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_19_Http", "Lab_19_Http\Lab_19_Http.csproj", "{486DBAD6-D50C-4D1D-8F6C-7C39F77CF835}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_20_Northwind_Products", "Lab_20_Northwind_Products\Lab_20_Northwind_Products.csproj", "{A292B742-9FEF-4175-A452-67B7C3238477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_20_Northwind_Products", "Lab_20_Northwind_Products\Lab_20_Northwind_Products.csproj", "{A292B742-9FEF-4175-A452-67B7C3238477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_21_Async_Await", "Lab_21_Async_Await\Lab_21_Async_Await.csproj", "{2936543D-3989-465B-91B1-E0840D90AE9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_21_Async_Await", "Lab_21_Async_Await\Lab_21_Async_Await.csproj", "{2936543D-3989-465B-91B1-E0840D90AE9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_22_Serialization", "Lab_22_Serialization\Lab_22_Serialization.csproj", "{4F839C87-5016-4693-8D72-770DCE6280AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_22_Serialization", "Lab_22_Serialization\Lab_22_Serialization.csproj", "{4F839C87-5016-4693-8D72-770DCE6280AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_23_Serialize_JSON", "Lab_23_Serialize_JSON\Lab_23_Serialize_JSON.csproj", "{870F380F-DDF1-49F9-837A-02A9AA0E281B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_23_Serialize_JSON", "Lab_23_Serialize_JSON\Lab_23_Serialize_JSON.csproj", "{870F380F-DDF1-49F9-837A-02A9AA0E281B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_24_Serialize_Binary", "Lab_24_Serialize_Binary\Lab_24_Serialize_Binary.csproj", "{E3546236-219A-4041-92E7-C628F918E6A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_24_Serialize_Binary", "Lab_24_Serialize_Binary\Lab_24_Serialize_Binary.csproj", "{E3546236-219A-4041-92E7-C628F918E6A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_API_Northwind", "Demo_API_Northwind\Demo_API_Northwind.csproj", "{7172A38A-37A0-4781-AA68-2F59F34F92F8}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HTML", "..\HTML\", "{D8201DDC-344A-4D69-BA4A-A180ACFED69D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55250"
+		Debug.AspNetCompiler.PhysicalPath = "..\HTML\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55250\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55250"
+		Release.AspNetCompiler.PhysicalPath = "..\HTML\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55250\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55250"
+		SlnRelativePath = "..\HTML\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_25_ASP_First_Website", "Lab_25_ASP_First_Website\Lab_25_ASP_First_Website.csproj", "{D241CF2F-E078-48FC-B6C1-462686126012}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -184,6 +207,14 @@ Global
 		{7172A38A-37A0-4781-AA68-2F59F34F92F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7172A38A-37A0-4781-AA68-2F59F34F92F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7172A38A-37A0-4781-AA68-2F59F34F92F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8201DDC-344A-4D69-BA4A-A180ACFED69D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8201DDC-344A-4D69-BA4A-A180ACFED69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8201DDC-344A-4D69-BA4A-A180ACFED69D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8201DDC-344A-4D69-BA4A-A180ACFED69D}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D241CF2F-E078-48FC-B6C1-462686126012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D241CF2F-E078-48FC-B6C1-462686126012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D241CF2F-E078-48FC-B6C1-462686126012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D241CF2F-E078-48FC-B6C1-462686126012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
