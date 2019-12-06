@@ -87,6 +87,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HTML", "..\HTML\", "{D8201D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_25_ASP_First_Website", "Lab_25_ASP_First_Website\Lab_25_ASP_First_Website.csproj", "{D241CF2F-E078-48FC-B6C1-462686126012}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_26_MVC", "Lab_26_MVC\Lab_26_MVC.csproj", "{6E754EFB-4E13-47A7-8A12-9A62DAFA6060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_27_MVC_Core", "Lab_27_MVC_Core\Lab_27_MVC_Core.csproj", "{06646229-70F8-41B3-B49A-069799F7DC30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -215,6 +219,14 @@ Global
 		{D241CF2F-E078-48FC-B6C1-462686126012}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D241CF2F-E078-48FC-B6C1-462686126012}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D241CF2F-E078-48FC-B6C1-462686126012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E754EFB-4E13-47A7-8A12-9A62DAFA6060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E754EFB-4E13-47A7-8A12-9A62DAFA6060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E754EFB-4E13-47A7-8A12-9A62DAFA6060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E754EFB-4E13-47A7-8A12-9A62DAFA6060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06646229-70F8-41B3-B49A-069799F7DC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06646229-70F8-41B3-B49A-069799F7DC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06646229-70F8-41B3-B49A-069799F7DC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06646229-70F8-41B3-B49A-069799F7DC30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

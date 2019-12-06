@@ -12,3 +12,7 @@ function runSomeTestData() {
     console.log('Are you a genius?' + genius);
     console.log('Name is ' + name);
 }
+function incrementNumber(){
+    x++;
+    document.getElementById('test-data').innerText=x;
+}
