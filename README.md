@@ -66,6 +66,32 @@
 
 [Day 33 - Serialize To XML, JSON and Binary](DailyLessons/Day%2033%20Serialize%20To%20XML%20JSON%20and%20Binary.md)
 
+[Day 33 - HTML and CSS](DailyLessons/Day%2033%20HTML%20and%20CSS.md)
+
+[Day 34 - Morning Tech Review](DailyLessons/Day%2034%20Morning%20Tech%20Review.md)
+
+[Day 34 - Bootstrap Photo Gallery](DailyLessons/Day%2034%20Bootstrap%20Photo%20Gallery.md)
+
+[Day 34 - ASP Intro](DailyLessons/Day%2034%20ASP%20Intro.md)
+
+[Day 34 - CSS continued](DailyLessons/Day%2034%20CSS%20continued.md)
+
+[Day 34 - Javascript](DailyLessons/Day%2034%20Javascript.md)
+
+[Day 35 - ASP Recap And MVC Intro](DailyLessons/Day%2035%20ASP%20Recap%20And%20MVC%20Intro.md)
+
 ### Week 8
+
+[Day 36 - Tech Review](DailyLessons/Day%2036%20Tech%20Review.md)
+
+[Day 36 - CSS Animations](DailyLessons/Day%2036%20CSS%20Animations.md)
+
+[Day 36 - CSS Position](DailyLessons/Day%2036%20CSS%20Position.md)
+
+[Day 36 - CSS Animations](DailyLessons/Day%2036%20CSS%20Animations%201.md)
+
+[Day 36 - Javascript Animations](DailyLessons/Day%2036%20Javascript%20Animations.md)
+
+[Day 36 - Javascript Adding Elements To The DOM](DailyLessons/Day%2036%20Javascript%20Adding%20Elements%20To%20The%20DOM.md)
 
 [Day - 45 - Modern Javascript Application](DailyLessons/Day%2045%20Modern%20Javascript%20Application.md)
