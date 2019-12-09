@@ -1,4 +1,4 @@
-﻿@model  IEnumerable<Lab_27_MVC_Core.Controllers.HomeController.MyList>
+﻿@model List<String>
 @{
     ViewData["Title"] = "MyAction";
 }
@@ -26,10 +26,11 @@
     }
 </ul>
 
-<h2>Now let's try as a MODEL</h2>
+<h2>Via List of strings</h2>
 <ul>
-    @foreach(var item in @Model)
+    @foreach(var item in Model)
     {
-    <li>Item from the MODEL is @item</li>
+        <li>@item</li>
     }
 </ul>
+

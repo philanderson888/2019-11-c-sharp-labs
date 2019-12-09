@@ -11,7 +11,7 @@ namespace Lab_27_MVC_Core.Controllers
     public class HomeController : Controller
     {
 
-        public List<string> MyList = new List<string>();
+        public static List<string> MyList = new List<string>();
 
         public IActionResult Index()
         {
@@ -45,6 +45,7 @@ namespace Lab_27_MVC_Core.Controllers
 
         public IActionResult MyAction()
         {
+            
             ViewBag.MyItem = "This is some data";
             ViewData["AnotherItem"] = "And some more data";
             MyList = new List<string>() {"one","two","three" };
