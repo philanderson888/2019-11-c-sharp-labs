@@ -6,7 +6,19 @@ namespace Lab_28_Fibonacci
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+        
+        }
+    }
+
+
+    class Fibonacci
+    {
+        // create a test with 3 test values to ensure this works
+        
+        public int ReturnFibonacciNthItemInSequence(int n)
+        {
+            // return value of nth item
+            return -1;
         }
     }
 }
