@@ -99,7 +99,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_30_Debugging", "Lab_30_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_31_Event_Logging", "Lab_31_Event_Logging\Lab_31_Event_Logging.csproj", "{4FBB2B55-A28B-488F-83EC-F58AD56ACC92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_32_MVC_Core_Entity_Northwind", "Lab_32_MVC_Core_Entity_Northwind\Lab_32_MVC_Core_Entity_Northwind.csproj", "{6F9324C3-C726-426B-AE50-21040ECA566D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_32_MVC_Core_Entity_Northwind", "Lab_32_MVC_Core_Entity_Northwind\Lab_32_MVC_Core_Entity_Northwind.csproj", "{6F9324C3-C726-426B-AE50-21040ECA566D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
