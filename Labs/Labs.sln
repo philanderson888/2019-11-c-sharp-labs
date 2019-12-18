@@ -101,6 +101,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_31_Event_Logging", "Lab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_32_MVC_Core_Entity_Northwind", "Lab_32_MVC_Core_Entity_Northwind\Lab_32_MVC_Core_Entity_Northwind.csproj", "{6F9324C3-C726-426B-AE50-21040ECA566D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_33_MVC_Framework_Entity_Helpdesk", "Lab_33_MVC_Framework_Entity_Helpdesk\Lab_33_MVC_Framework_Entity_Helpdesk.csproj", "{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -257,6 +259,10 @@ Global
 		{6F9324C3-C726-426B-AE50-21040ECA566D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F9324C3-C726-426B-AE50-21040ECA566D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F9324C3-C726-426B-AE50-21040ECA566D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
