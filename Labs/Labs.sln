@@ -103,6 +103,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_32_MVC_Core_Entity_Nort
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_33_MVC_Framework_Entity_Helpdesk", "Lab_33_MVC_Framework_Entity_Helpdesk\Lab_33_MVC_Framework_Entity_Helpdesk.csproj", "{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_34_Gym_Database", "Lab_34_Gym_Database\Lab_34_Gym_Database.csproj", "{5839A717-B552-4A14-BF54-1DDC1B46F25E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab_34_Gym_Website_MVC_Core", "Lab_34_Gym_Website_MVC_Core\Lab_34_Gym_Website_MVC_Core.csproj", "{1B4869F8-5A5C-4463-B94F-95A9285E7628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_34_Jagged_Array", "Lab_34_Jagged_Array\Lab_34_Jagged_Array.csproj", "{BDE450ED-D726-46AD-ABFD-44BA3030D1C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -263,6 +269,18 @@ Global
 		{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7BFE3B2-339E-44C9-A902-9BFC6598DE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5839A717-B552-4A14-BF54-1DDC1B46F25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5839A717-B552-4A14-BF54-1DDC1B46F25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5839A717-B552-4A14-BF54-1DDC1B46F25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5839A717-B552-4A14-BF54-1DDC1B46F25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B4869F8-5A5C-4463-B94F-95A9285E7628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B4869F8-5A5C-4463-B94F-95A9285E7628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B4869F8-5A5C-4463-B94F-95A9285E7628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B4869F8-5A5C-4463-B94F-95A9285E7628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE450ED-D726-46AD-ABFD-44BA3030D1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE450ED-D726-46AD-ABFD-44BA3030D1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE450ED-D726-46AD-ABFD-44BA3030D1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE450ED-D726-46AD-ABFD-44BA3030D1C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

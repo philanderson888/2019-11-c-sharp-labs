@@ -15,7 +15,16 @@ namespace Lab_33_MVC_Framework_Entity_Helpdesk
 
         public int? CategoryId { get; set; }
 
-        public bool IsLiveUser { get; set; }
+        public bool? IsLiveUser { get; set; }
+
+        public string Test { get; set; }
+
+        public int TestInt { get; set; }
+
+        public int? TestInt2 { get; set; }
+
+        public string NewField { get; set; }
+        public string NewField2 { get; set; }
 
         public virtual Category Category { get; set; }
     }
